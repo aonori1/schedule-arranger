@@ -10,6 +10,11 @@ class SessionController {
     }
     res.render('login');
   }
+
+  logout(req, res) {
+    req.logout();
+    res.redirect('/');
+  }
 }
 
 module.exports = SessionController;
