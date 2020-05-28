@@ -1,6 +1,4 @@
 'use strict';
-const express = require('express');
-const router = express.Router();
 
 class SessionController {
   login(req, res) {
