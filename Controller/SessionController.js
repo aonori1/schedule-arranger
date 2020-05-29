@@ -1,0 +1,18 @@
+'use strict';
+
+class SessionController {
+  login(req, res) {
+    const from = req.query.from;
+    if (from) {
+      res.cookie('loginFrom', from, { expires: new Date(Date.now() + 600000)});
+    }
+    res.render('login');
+  }
+
+  logout(req, res) {
+    req.logout();
+    res.redirect('/');
+  }
+}
+
+module.exports = SessionController;
